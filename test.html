@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Refactored date examples</title>
+
+    <link rel="stylesheet" href="qunit.css" />
+    <script src="qunit.js"></script>
+    <script src="date.js"></script>
+
+    <script>
+    test("prettydate up", function() {
+		var now = "2008/01/27 22:24:17";
+        var links = document.getElementById('qunit-fixture').getElementsByTagName('a');
+		prettyDate.update(now);
+        equal(links[0].innerHTML,"just now");
+        equal(links[1].innerHTML,"just now");
+    });
+    </script>
+</head>
+<body>
+	<div id="qunit-fixture">
+        <ul>
+            <li class="entry" id="post57">
+                <p>blah blah blah…</p>
+                <small class="extra">
+                    Posted <span class="time"><a href="/2008/01/blah/57/" title="2008-01-28T20:24:17Z">January 28th, 2008</a></span>
+                </small>
+            </li>
+            <li class="entry" id="post57">
+                <p>blah blah blah…</p>
+                <small class="extra">
+                    Posted <span class="time"><a href="/2008/01/blah/57/" title="2008-01-27T22:24:17Z">January 27th, 2008</a></span>
+                </small>
+            </li>
+        </ul>
+    </div>
+
+    <div id="qunit"></div>
+	
+	
+</body>
+</html>
